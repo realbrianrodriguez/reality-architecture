@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Button from '@/components/Button';
 import GlassPanel from '@/components/GlassPanel';
 import HistorySection from '@/components/HistorySection';
 import { DailyCalibrationResponse } from '@/utils/types';
 import { saveRun } from '@/utils/history';
+import { getTodayKey, markDone, isDone, getStreak } from '@/utils/dailyCompletion';
 
 export default function DailyPage() {
   const [loading, setLoading] = useState(false);
@@ -14,6 +15,17 @@ export default function DailyPage() {
   );
   const [error, setError] = useState<string | null>(null);
   const [historyRefreshKey, setHistoryRefreshKey] = useState(0);
+  const [todayKey, setTodayKey] = useState<string>(() => getTodayKey());
+  const [doneToday, setDoneToday] = useState(false);
+  const [streak, setStreak] = useState(0);
+
+  // Initialize completion state on mount and when results change
+  useEffect(() => {
+    const today = getTodayKey();
+    setTodayKey(today);
+    setDoneToday(isDone(today));
+    setStreak(getStreak());
+  }, [results]);
 
   const handleGenerate = async () => {
     setLoading(true);
@@ -61,6 +73,31 @@ export default function DailyPage() {
     }
   };
 
+  const handleMarkDone = () => {
+    if (!results || !todayKey) return;
+    
+    if (results.identityStatement && results.recommendedAction) {
+      markDone(todayKey, {
+        identityStatement: results.identityStatement,
+        recommendedAction: results.recommendedAction,
+      });
+      
+      setDoneToday(true);
+      setStreak(getStreak());
+    }
+  };
+
+  const hasResults = 
+    results?.identityStatement?.trim().length > 0 &&
+    results?.recommendedAction?.trim().length > 0;
+  const showMarkDone = hasResults && !doneToday;
+
+  const todayLabel = new Date().toLocaleDateString(undefined, {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+  });
+
   return (
     <div className="px-6 md:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
@@ -68,6 +105,14 @@ export default function DailyPage() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
               Daily Calibration
             </h1>
+            <div className="mb-6 space-y-1">
+              <p className="text-base text-[rgba(5,5,5,0.48)]">
+                Today: {todayLabel}
+              </p>
+              <p className="text-base text-[rgba(5,5,5,0.48)]">
+                Streak: {streak} {streak === 1 ? 'day' : 'days'}
+              </p>
+            </div>
             <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
               Get a 60-second identity and action check-in.
             </p>
@@ -111,6 +156,22 @@ export default function DailyPage() {
                     </p>
                   )}
                 </div>
+
+                {showMarkDone && (
+                  <div className="pt-4">
+                    <Button onClick={handleMarkDone}>
+                      Mark Done
+                    </Button>
+                  </div>
+                )}
+
+                {doneToday && (
+                  <div className="pt-4">
+                    <Button disabled className="opacity-50 cursor-not-allowed">
+                      Completed today
+                    </Button>
+                  </div>
+                )}
               </div>
             )}
           </GlassPanel>
