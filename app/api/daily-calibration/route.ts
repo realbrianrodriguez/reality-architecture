@@ -2,9 +2,24 @@ import { NextRequest, NextResponse } from 'next/server';
 import { callOpenAI } from '@/lib/openai';
 import { dailyCalibrationSystemPrompt } from '@/utils/prompts';
 import { DailyCalibrationResponse } from '@/utils/types';
+import { enforceGuardrails } from '@/utils/guardrails';
 
 export async function POST(request: NextRequest) {
   console.log('[DAILY-CALIBRATION API] POST request arrived');
+  
+  // Apply rate limiting
+  const guardrail = enforceGuardrails(request, {
+    windowMs: 60_000,
+    maxRequests: 20,
+    cooldownMs: 2_500,
+  });
+  if (!guardrail.ok) {
+    return NextResponse.json(
+      { error: guardrail.error },
+      { status: guardrail.status }
+    );
+  }
+
   try {
     // Empty body is fine for daily calibration
     console.log('[DAILY-CALIBRATION API] Calling OpenAI...');
