@@ -87,9 +87,9 @@ export default function DailyPage() {
     }
   };
 
-  const hasResults = 
-    results?.identityStatement?.trim().length > 0 &&
-    results?.recommendedAction?.trim().length > 0;
+  const identityLen = results?.identityStatement?.trim()?.length ?? 0;
+  const actionLen = results?.recommendedAction?.trim()?.length ?? 0;
+  const hasResults = identityLen > 0 && actionLen > 0;
   const showMarkDone = hasResults && !doneToday;
 
   const todayLabel = new Date().toLocaleDateString(undefined, {
