@@ -103,7 +103,7 @@ export default function DailyPage() {
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-              Daily Calibration
+              Daily calibration
             </h1>
             <div className="mb-6 space-y-1">
               <p className="text-base text-[rgba(5,5,5,0.48)]">
@@ -129,7 +129,7 @@ export default function DailyPage() {
               <div className="space-y-8 md:space-y-10">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
-                    Identity Statement
+                    Identity statement
                   </h2>
                   {results.identityStatement ? (
                     <p className="text-[#050505] text-xl leading-relaxed">
@@ -144,7 +144,7 @@ export default function DailyPage() {
 
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
-                    Recommended Action
+                    Recommended action
                   </h2>
                   {results.recommendedAction ? (
                     <p className="text-[#050505] text-xl leading-relaxed">
@@ -189,7 +189,7 @@ export default function DailyPage() {
               <div className="space-y-8 md:space-y-10">
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
-                    Identity Statement
+                    Identity statement
                   </h2>
                   {output.identityStatement ? (
                     <p className="text-[#050505] text-xl leading-relaxed">
@@ -204,7 +204,7 @@ export default function DailyPage() {
 
                 <div>
                   <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
-                    Recommended Action
+                    Recommended action
                   </h2>
                   {output.recommendedAction ? (
                     <p className="text-[#050505] text-xl leading-relaxed">
