@@ -41,9 +41,14 @@ export default function Shell({ children }: ShellProps) {
         <div className="liquid-bg">
           <div className="noise-overlay" />
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar onOpenOnboarding={handleOpenOnboarding} />
-          <main className="w-full">{children}</main>
+          <main className="w-full flex-1">{children}</main>
+          <footer className="w-full py-6 text-center">
+            <p className="text-xs opacity-45 text-[#050505]">
+              reality architecture — v0.1.0
+            </p>
+          </footer>
         </div>
       </div>
     );
@@ -57,9 +62,14 @@ export default function Shell({ children }: ShellProps) {
       </div>
       
       {/* Content Layer */}
-      <div className="relative z-10">
+      <div className="relative z-10 flex flex-col min-h-screen">
         <Navbar onOpenOnboarding={handleOpenOnboarding} />
-        <main className="w-full">{children}</main>
+        <main className="w-full flex-1">{children}</main>
+        <footer className="w-full py-6 text-center">
+          <p className="text-xs opacity-45 text-[#050505]">
+            reality architecture — v0.1.0
+          </p>
+        </footer>
       </div>
 
       {/* Onboarding Overlay */}
