@@ -2,9 +2,24 @@ import { NextRequest, NextResponse } from 'next/server';
 import { callOpenAI } from '@/lib/openai';
 import { simulationSystemPrompt } from '@/utils/prompts';
 import { SimulationResponse } from '@/utils/types';
+import { enforceGuardrails } from '@/utils/guardrails';
 
 export async function POST(request: NextRequest) {
   console.log('[SIMULATION API] POST request arrived');
+  
+  // Apply rate limiting
+  const guardrail = enforceGuardrails(request, {
+    windowMs: 60_000,
+    maxRequests: 20,
+    cooldownMs: 2_500,
+  });
+  if (!guardrail.ok) {
+    return NextResponse.json(
+      { error: guardrail.error },
+      { status: guardrail.status }
+    );
+  }
+
   try {
     const body = await request.json();
     console.log('[SIMULATION API] Request body received:', { hasScenario: !!body.scenario, scenarioLength: body.scenario?.length });
