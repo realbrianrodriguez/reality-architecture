@@ -101,19 +101,19 @@ export default function DailyPage() {
   return (
     <div className="px-6 md:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
-          <div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-              Daily calibration
+          <div className="space-y-6">
+            <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-[#050505]">
+              Today
             </h1>
-            <div className="mb-6 space-y-1">
-              <p className="text-base text-[rgba(5,5,5,0.48)]">
+            <div className="space-y-2">
+              <p className="text-sm font-normal text-[rgba(5,5,5,0.48)]">
                 Today: {todayLabel}
               </p>
-              <p className="text-base text-[rgba(5,5,5,0.48)]">
+              <p className="text-sm font-normal text-[rgba(5,5,5,0.48)]">
                 Streak: {streak} {streak === 1 ? 'day' : 'days'}
               </p>
             </div>
-            <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
+            <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
               Get a 60-second identity and action check-in.
             </p>
           </div>
@@ -126,32 +126,32 @@ export default function DailyPage() {
                 </Button>
               </div>
             ) : (
-              <div className="space-y-8 md:space-y-10">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+              <div className="space-y-10">
+                <div className="space-y-4">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505]">
                     Identity statement
                   </h2>
                   {results.identityStatement ? (
-                    <p className="text-[#050505] text-xl leading-relaxed">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                       {results.identityStatement}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No identity statement returned. Please try again.
                     </p>
                   )}
                 </div>
 
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                <div className="space-y-4">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505]">
                     Recommended action
                   </h2>
                   {results.recommendedAction ? (
-                    <p className="text-[#050505] text-xl leading-relaxed">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                       {results.recommendedAction}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No recommended action returned. Please try again.
                     </p>
                   )}
@@ -177,8 +177,8 @@ export default function DailyPage() {
           </GlassPanel>
 
           {error && (
-            <div className="glass-panel p-6 border-red-300/50">
-              <p className="text-red-600 font-semibold">{error}</p>
+            <div className="glass-panel p-6">
+              <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{error}</p>
             </div>
           )}
 
@@ -186,32 +186,32 @@ export default function DailyPage() {
             tool="daily"
             refreshKey={historyRefreshKey}
             renderResults={(output: DailyCalibrationResponse) => (
-              <div className="space-y-8 md:space-y-10">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+              <div className="space-y-10">
+                <div className="space-y-4">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505]">
                     Identity statement
                   </h2>
                   {output.identityStatement ? (
-                    <p className="text-[#050505] text-xl leading-relaxed">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                       {output.identityStatement}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No identity statement returned. Please try again.
                     </p>
                   )}
                 </div>
 
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                <div className="space-y-4">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505]">
                     Recommended action
                   </h2>
                   {output.recommendedAction ? (
-                    <p className="text-[#050505] text-xl leading-relaxed">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                       {output.recommendedAction}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No recommended action returned. Please try again.
                     </p>
                   )}
