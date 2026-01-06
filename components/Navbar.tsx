@@ -89,6 +89,19 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
               )}
             </Link>
+            <Link
+              href="/weekly"
+              className={`text-sm font-medium transition-all relative ${
+                isActive('/weekly')
+                  ? 'text-[#050505]'
+                  : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
+              }`}
+            >
+              Weekly review
+              {isActive('/weekly') && (
+                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
+              )}
+            </Link>
             {onOpenOnboarding && (
               <button
                 onClick={() => {
