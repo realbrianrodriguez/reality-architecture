@@ -79,7 +79,7 @@ export default function SimulationPage() {
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-              Simulation Paths
+              Paths
             </h1>
             <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
               Describe a scenario you care about (career, relationship, etc.).

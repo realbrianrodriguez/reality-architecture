@@ -21,6 +21,16 @@ export default function Shell({ children }: ShellProps) {
       setOnboardingMode('first-run');
       setOnboardingOpen(true);
     }
+
+    // Listen for custom event to open onboarding from Home page
+    const handleOpenOnboardingEvent = () => {
+      setOnboardingMode('manual');
+      setOnboardingOpen(true);
+    };
+    window.addEventListener('openOnboarding', handleOpenOnboardingEvent);
+    return () => {
+      window.removeEventListener('openOnboarding', handleOpenOnboardingEvent);
+    };
   }, []);
 
   const handleOnboardingClose = useCallback(() => {

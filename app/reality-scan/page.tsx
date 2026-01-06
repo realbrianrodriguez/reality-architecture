@@ -88,7 +88,7 @@ function RealityScanContent() {
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-              Reality Scan
+              Mirror
             </h1>
             <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
               Describe a recurring situation, pattern, or feeling.
@@ -429,7 +429,7 @@ export default function RealityScanPage() {
       <div className="px-6 md:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-            Reality Scan
+            Mirror
           </h1>
           <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
             Loading...

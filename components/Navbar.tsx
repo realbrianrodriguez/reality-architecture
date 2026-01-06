@@ -32,7 +32,7 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                   : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
               }`}
             >
-              Dashboard
+              Home
               {isActive('/') && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
               )}
@@ -45,7 +45,7 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                   : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
               }`}
             >
-              Reality Scan
+              Mirror
               {isActive('/reality-scan') && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
               )}
@@ -58,7 +58,7 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                   : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
               }`}
             >
-              Identity Designer
+              Reframe
               {isActive('/identity-designer') && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
               )}
@@ -71,7 +71,7 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                   : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
               }`}
             >
-              Simulation
+              Paths
               {isActive('/simulation') && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
               )}
@@ -84,7 +84,7 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                   : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
               }`}
             >
-              Daily Calibration
+              Today
               {isActive('/daily') && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
               )}
@@ -97,7 +97,7 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                   : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
               }`}
             >
-              Weekly review
+              Week
               {isActive('/weekly') && (
                 <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
               )}
@@ -110,7 +110,7 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
                 }}
                 className="text-sm font-medium text-[rgba(5,5,5,0.55)] hover:text-[#050505] transition-colors"
               >
-                Onboarding
+                Guide
               </button>
             )}
           </div>

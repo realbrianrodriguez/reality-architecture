@@ -81,7 +81,7 @@ export default function IdentityDesignerPage() {
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           <div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-              Identity Designer
+              Reframe
             </h1>
             <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
               Paste a limiting belief and we&apos;ll help you rewrite it.

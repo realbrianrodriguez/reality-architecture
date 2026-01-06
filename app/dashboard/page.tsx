@@ -18,7 +18,7 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <Card href="/reality-scan">
             <h2 className="text-2xl font-bold text-[#050505] mb-3">
-              Reality Scan
+              Mirror
             </h2>
             <p className="text-[rgba(5,5,5,0.64)] leading-relaxed text-lg">
               Analyze recurring patterns, beliefs, and cognitive distortions in
@@ -28,7 +28,7 @@ export default function Dashboard() {
 
           <Card href="/identity-designer">
             <h2 className="text-2xl font-bold text-[#050505] mb-3">
-              Identity Designer
+              Reframe
             </h2>
             <p className="text-[rgba(5,5,5,0.64)] leading-relaxed text-lg">
               Rewrite limiting beliefs and design a new identity narrative.
@@ -37,7 +37,7 @@ export default function Dashboard() {
 
           <Card href="/simulation">
             <h2 className="text-2xl font-bold text-[#050505] mb-3">
-              Simulation Paths
+              Paths
             </h2>
             <p className="text-[rgba(5,5,5,0.64)] leading-relaxed text-lg">
               Explore two possible future paths based on different identity
@@ -47,7 +47,7 @@ export default function Dashboard() {
 
           <Card href="/daily">
             <h2 className="text-2xl font-bold text-[#050505] mb-3">
-              Daily Calibration
+              Today
             </h2>
             <p className="text-[rgba(5,5,5,0.64)] leading-relaxed text-lg">
               Get a quick daily check-in to align with your empowered identity.
