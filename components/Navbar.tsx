@@ -23,95 +23,103 @@ export default function Navbar({ onOpenOnboarding }: NavbarProps) {
           >
             Reality Architecture
           </Link>
-          <div className="flex space-x-6 md:space-x-8">
-            <Link
-              href="/"
-              className={`text-sm font-medium transition-all relative ${
-                isActive('/')
-                  ? 'text-[#050505]'
-                  : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
-              }`}
-            >
-              Dashboard
-              {isActive('/') && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
-              )}
-            </Link>
-            <Link
-              href="/reality-scan"
-              className={`text-sm font-medium transition-all relative ${
-                isActive('/reality-scan')
-                  ? 'text-[#050505]'
-                  : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
-              }`}
-            >
-              Reality Scan
-              {isActive('/reality-scan') && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
-              )}
-            </Link>
-            <Link
-              href="/identity-designer"
-              className={`text-sm font-medium transition-all relative ${
-                isActive('/identity-designer')
-                  ? 'text-[#050505]'
-                  : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
-              }`}
-            >
-              Identity Designer
-              {isActive('/identity-designer') && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
-              )}
-            </Link>
-            <Link
-              href="/simulation"
-              className={`text-sm font-medium transition-all relative ${
-                isActive('/simulation')
-                  ? 'text-[#050505]'
-                  : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
-              }`}
-            >
-              Simulation
-              {isActive('/simulation') && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
-              )}
-            </Link>
-            <Link
-              href="/daily"
-              className={`text-sm font-medium transition-all relative ${
-                isActive('/daily')
-                  ? 'text-[#050505]'
-                  : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
-              }`}
-            >
-              Daily Calibration
-              {isActive('/daily') && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
-              )}
-            </Link>
-            <Link
-              href="/weekly"
-              className={`text-sm font-medium transition-all relative ${
-                isActive('/weekly')
-                  ? 'text-[#050505]'
-                  : 'text-[rgba(5,5,5,0.55)] hover:text-[#050505]'
-              }`}
-            >
-              Weekly review
-              {isActive('/weekly') && (
-                <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#050505] rounded-full" />
-              )}
-            </Link>
-            {onOpenOnboarding && (
-              <button
-                onClick={() => {
-                  console.log("[NAVBAR] Open onboarding clicked");
-                  onOpenOnboarding();
-                }}
-                className="text-sm font-medium text-[rgba(5,5,5,0.55)] hover:text-[#050505] transition-colors"
+          <div className="flex items-center flex-nowrap">
+            {/* Primary Navigation */}
+            <div className="flex items-center space-x-8 md:space-x-10 lg:space-x-12">
+              <Link
+                href="/"
+                className={`text-sm font-normal relative whitespace-nowrap ${
+                  isActive('/')
+                    ? 'text-[#050505]'
+                    : 'text-[rgba(5,5,5,0.48)] hover:text-[rgba(5,5,5,0.72)]'
+                }`}
               >
-                Onboarding
-              </button>
+                Home
+                {isActive('/') && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#050505]" />
+                )}
+              </Link>
+              <Link
+                href="/reality-scan"
+                className={`text-sm font-normal relative whitespace-nowrap ${
+                  isActive('/reality-scan')
+                    ? 'text-[#050505]'
+                    : 'text-[rgba(5,5,5,0.48)] hover:text-[rgba(5,5,5,0.72)]'
+                }`}
+              >
+                Mirror
+                {isActive('/reality-scan') && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#050505]" />
+                )}
+              </Link>
+              <Link
+                href="/identity-designer"
+                className={`text-sm font-normal relative whitespace-nowrap ${
+                  isActive('/identity-designer')
+                    ? 'text-[#050505]'
+                    : 'text-[rgba(5,5,5,0.48)] hover:text-[rgba(5,5,5,0.72)]'
+                }`}
+              >
+                Reframe
+                {isActive('/identity-designer') && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#050505]" />
+                )}
+              </Link>
+              <Link
+                href="/simulation"
+                className={`text-sm font-normal relative whitespace-nowrap ${
+                  isActive('/simulation')
+                    ? 'text-[#050505]'
+                    : 'text-[rgba(5,5,5,0.48)] hover:text-[rgba(5,5,5,0.72)]'
+                }`}
+              >
+                Paths
+                {isActive('/simulation') && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#050505]" />
+                )}
+              </Link>
+              <Link
+                href="/daily"
+                className={`text-sm font-normal relative whitespace-nowrap ${
+                  isActive('/daily')
+                    ? 'text-[#050505]'
+                    : 'text-[rgba(5,5,5,0.48)] hover:text-[rgba(5,5,5,0.72)]'
+                }`}
+              >
+                Today
+                {isActive('/daily') && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#050505]" />
+                )}
+              </Link>
+              <Link
+                href="/weekly"
+                className={`text-sm font-normal relative whitespace-nowrap ${
+                  isActive('/weekly')
+                    ? 'text-[#050505]'
+                    : 'text-[rgba(5,5,5,0.48)] hover:text-[rgba(5,5,5,0.72)]'
+                }`}
+              >
+                Week
+                {isActive('/weekly') && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-px bg-[#050505]" />
+                )}
+              </Link>
+            </div>
+
+            {/* Secondary Navigation - Guide */}
+            {onOpenOnboarding && (
+              <>
+                <div className="w-px h-4 bg-[rgba(5,5,5,0.12)] mx-6 md:mx-8 lg:mx-10" />
+                <button
+                  onClick={() => {
+                    console.log("[NAVBAR] Open onboarding clicked");
+                    onOpenOnboarding();
+                  }}
+                  className="text-sm font-normal text-[rgba(5,5,5,0.40)] hover:text-[rgba(5,5,5,0.60)] transition-colors whitespace-nowrap"
+                >
+                  Guide
+                </button>
+              </>
             )}
           </div>
         </div>
