@@ -59,7 +59,7 @@ export default function HistorySection({
 
   const truncateInput = (input: string, maxLength: number = 60) => {
     if (!input || input.trim().length === 0) {
-      return tool === 'daily' ? 'Daily calibration' : '(No input)';
+      return tool === 'daily' ? 'Today' : '(No input)';
     }
     if (input.length <= maxLength) return input;
     return input.substring(0, maxLength) + '...';
