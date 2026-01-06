@@ -80,10 +80,10 @@ export default function IdentityDesignerPage() {
     <div className="px-6 md:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           <div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-              Identity Designer
+            <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-[#050505]">
+              Reframe
             </h1>
-            <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
+            <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
               Paste a limiting belief and we&apos;ll help you rewrite it.
             </p>
           </div>
@@ -106,50 +106,50 @@ export default function IdentityDesignerPage() {
 
           {validationMessage && (
             <div className="glass-panel p-6 border-[rgba(5,5,5,0.20)]">
-              <p className="text-[rgba(5,5,5,0.64)] text-lg leading-relaxed">{validationMessage}</p>
+              <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{validationMessage}</p>
             </div>
           )}
 
           {error && (
             <div className="glass-panel p-6 border-red-300/50">
-              <p className="text-red-600 font-semibold">{error}</p>
+              <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{error}</p>
             </div>
           )}
 
           {results && (
             <div className="space-y-8 md:space-y-12">
               <GlassPanel variant="tight" delay={0} className="reveal">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                   Reframed Assumption
                 </h2>
                 {results.reframedAssumption ? (
-                  <p className="text-[#050505] text-xl leading-relaxed">
+                  <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                     {results.reframedAssumption}
                   </p>
                 ) : (
-                  <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                  <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                     No reframed assumption returned. Try adding more detail and run again.
                   </p>
                 )}
               </GlassPanel>
 
               <GlassPanel variant="tight" delay={100} className="reveal">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                   Identity Shift
                 </h2>
                 {results.identityShift ? (
-                  <p className="text-[#050505] text-xl leading-relaxed">
+                  <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                     {results.identityShift}
                   </p>
                 ) : (
-                  <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                  <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                     No identity shift returned. Try adding more detail and run again.
                   </p>
                 )}
               </GlassPanel>
 
               <GlassPanel variant="tight" delay={200} className="reveal">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                   Behavioral Anchors
                 </h2>
                 {results.anchors && results.anchors.length > 0 ? (
@@ -157,29 +157,29 @@ export default function IdentityDesignerPage() {
                     {results.anchors.map((anchor, idx) => (
                       <li
                         key={idx}
-                        className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                        className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                       >
                         {anchor}
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                  <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                     No behavioral anchors returned. Try adding more detail and run again.
                   </p>
                 )}
               </GlassPanel>
 
               <GlassPanel variant="tight" delay={300} className="reveal">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                   Narrative Upgrade
                 </h2>
                 {results.narrativeUpgrade ? (
-                  <p className="text-[#050505] text-xl leading-relaxed">
+                  <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                     {results.narrativeUpgrade}
                   </p>
                 ) : (
-                  <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                  <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                     No narrative upgrade returned. Try adding more detail and run again.
                   </p>
                 )}
@@ -193,37 +193,37 @@ export default function IdentityDesignerPage() {
             renderResults={(output: IdentityDesignerResponse) => (
               <div className="space-y-8 md:space-y-12">
                 <GlassPanel variant="tight" delay={0} className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                     Reframed Assumption
                   </h2>
                   {output.reframedAssumption ? (
-                    <p className="text-[#050505] text-xl leading-relaxed">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                       {output.reframedAssumption}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No reframed assumption returned. Try adding more detail and run again.
                     </p>
                   )}
                 </GlassPanel>
 
                 <GlassPanel variant="tight" delay={100} className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                     Identity Shift
                   </h2>
                   {output.identityShift ? (
-                    <p className="text-[#050505] text-xl leading-relaxed">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                       {output.identityShift}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No identity shift returned. Try adding more detail and run again.
                     </p>
                   )}
                 </GlassPanel>
 
                 <GlassPanel variant="tight" delay={200} className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                     Behavioral Anchors
                   </h2>
                   {output.anchors && output.anchors.length > 0 ? (
@@ -231,29 +231,29 @@ export default function IdentityDesignerPage() {
                       {output.anchors.map((anchor, idx) => (
                         <li
                           key={idx}
-                          className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                          className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                         >
                           {anchor}
                         </li>
                       ))}
                     </ul>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No behavioral anchors returned. Try adding more detail and run again.
                     </p>
                   )}
                 </GlassPanel>
 
                 <GlassPanel variant="tight" delay={300} className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-6">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-6">
                     Narrative Upgrade
                   </h2>
                   {output.narrativeUpgrade ? (
-                    <p className="text-[#050505] text-xl leading-relaxed">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
                       {output.narrativeUpgrade}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                       No narrative upgrade returned. Try adding more detail and run again.
                     </p>
                   )}

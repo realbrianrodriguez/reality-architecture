@@ -78,10 +78,10 @@ export default function SimulationPage() {
     <div className="px-6 md:px-12 py-16 md:py-24">
         <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
           <div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-[#050505] mb-6">
-              Simulation Paths
+            <h1 className="text-6xl md:text-7xl font-bold tracking-tight text-[#050505]">
+              Paths
             </h1>
-            <p className="text-xl md:text-2xl text-[rgba(5,5,5,0.64)]">
+            <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">
               Describe a scenario you care about (career, relationship, etc.).
             </p>
           </div>
@@ -104,13 +104,13 @@ export default function SimulationPage() {
 
           {validationMessage && (
             <div className="glass-panel p-6 border-[rgba(5,5,5,0.20)]">
-              <p className="text-[rgba(5,5,5,0.64)] text-lg leading-relaxed">{validationMessage}</p>
+              <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{validationMessage}</p>
             </div>
           )}
 
           {error && (
             <div className="glass-panel p-6 border-red-300/50">
-              <p className="text-red-600 font-semibold">{error}</p>
+              <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{error}</p>
             </div>
           )}
 
@@ -118,15 +118,15 @@ export default function SimulationPage() {
             <div className="space-y-10 md:space-y-14">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <GlassPanel variant="stage" delay={0} className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-8">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-8">
                     Path A
                   </h2>
                   {results.pathA.summary ? (
-                    <p className="text-[#050505] text-xl leading-relaxed mb-8">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] mb-8">
                       {results.pathA.summary}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic mb-8">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)] mb-8">
                       No summary returned. Try adding more detail and run again.
                     </p>
                   )}
@@ -136,7 +136,7 @@ export default function SimulationPage() {
                       {results.pathA.steps.map((step, idx) => (
                         <li
                           key={idx}
-                          className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                          className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                         >
                           {step}
                         </li>
@@ -150,15 +150,15 @@ export default function SimulationPage() {
                 </GlassPanel>
 
                 <GlassPanel variant="stage" delay={150} className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-8">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-8">
                     Path B
                   </h2>
                   {results.pathB.summary ? (
-                    <p className="text-[#050505] text-xl leading-relaxed mb-8">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] mb-8">
                       {results.pathB.summary}
                     </p>
                   ) : (
-                    <p className="text-[rgba(5,5,5,0.48)] text-lg italic mb-8">
+                    <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)] mb-8">
                       No summary returned. Try adding more detail and run again.
                     </p>
                   )}
@@ -168,7 +168,7 @@ export default function SimulationPage() {
                       {results.pathB.steps.map((step, idx) => (
                         <li
                           key={idx}
-                          className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                          className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                         >
                           {step}
                         </li>
@@ -183,12 +183,12 @@ export default function SimulationPage() {
               </div>
 
               <GlassPanel variant="tight" delay={300} className="reveal">
-                <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-8">
+                <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-8">
                   Delta
                 </h2>
                 <div className="space-y-10">
                   <div>
-                    <h3 className="font-bold text-[#050505] mb-5 text-lg">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">
                       Behavior Changes
                     </h3>
                     {results.delta.behaviorChanges && results.delta.behaviorChanges.length > 0 ? (
@@ -196,21 +196,21 @@ export default function SimulationPage() {
                         {results.delta.behaviorChanges.map((change, idx) => (
                           <li
                             key={idx}
-                            className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                            className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                           >
                             {change}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                         No behavior changes returned. Try adding more detail and run again.
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-[#050505] mb-5 text-lg">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">
                       Outcome Differences
                     </h3>
                     {results.delta.outcomeDifferences && results.delta.outcomeDifferences.length > 0 ? (
@@ -218,21 +218,21 @@ export default function SimulationPage() {
                         {results.delta.outcomeDifferences.map((diff, idx) => (
                           <li
                             key={idx}
-                            className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                            className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                           >
                             {diff}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                         No outcome differences returned. Try adding more detail and run again.
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <h3 className="font-bold text-[#050505] mb-5 text-lg">
+                    <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">
                       Identity Impact
                     </h3>
                     {results.delta.identityImpact && results.delta.identityImpact.length > 0 ? (
@@ -240,14 +240,14 @@ export default function SimulationPage() {
                         {results.delta.identityImpact.map((impact, idx) => (
                           <li
                             key={idx}
-                            className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                            className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                           >
                             {impact}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                         No identity impact returned. Try adding more detail and run again.
                       </p>
                     )}
@@ -264,64 +264,64 @@ export default function SimulationPage() {
               <div className="space-y-10 md:space-y-14">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                   <GlassPanel variant="stage" delay={0} className="reveal">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-8">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-8">
                       Path A
                     </h2>
                     {output.pathA.summary ? (
-                      <p className="text-[#050505] text-xl leading-relaxed mb-8">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] mb-8">
                         {output.pathA.summary}
                       </p>
                     ) : (
-                      <p className="text-[rgba(5,5,5,0.48)] text-lg italic mb-8">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)] mb-8">
                         No summary returned. Try adding more detail and run again.
                       </p>
                     )}
-                    <h3 className="font-bold text-[#050505] mb-5 text-lg">Steps:</h3>
+                    <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">Steps:</h3>
                     {output.pathA.steps && output.pathA.steps.length > 0 ? (
                       <ul className="space-y-4">
                         {output.pathA.steps.map((step, idx) => (
                           <li
                             key={idx}
-                            className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                            className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                           >
                             {step}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                         No steps returned. Try adding more detail and run again.
                       </p>
                     )}
                   </GlassPanel>
 
                   <GlassPanel variant="stage" delay={150} className="reveal">
-                    <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-8">
+                    <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-8">
                       Path B
                     </h2>
                     {output.pathB.summary ? (
-                      <p className="text-[#050505] text-xl leading-relaxed mb-8">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] mb-8">
                         {output.pathB.summary}
                       </p>
                     ) : (
-                      <p className="text-[rgba(5,5,5,0.48)] text-lg italic mb-8">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)] mb-8">
                         No summary returned. Try adding more detail and run again.
                       </p>
                     )}
-                    <h3 className="font-bold text-[#050505] mb-5 text-lg">Steps:</h3>
+                    <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">Steps:</h3>
                     {output.pathB.steps && output.pathB.steps.length > 0 ? (
                       <ul className="space-y-4">
                         {output.pathB.steps.map((step, idx) => (
                           <li
                             key={idx}
-                            className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                            className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                           >
                             {step}
                           </li>
                         ))}
                       </ul>
                     ) : (
-                      <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                      <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                         No steps returned. Try adding more detail and run again.
                       </p>
                     )}
@@ -329,12 +329,12 @@ export default function SimulationPage() {
                 </div>
 
                 <GlassPanel variant="tight" delay={300} className="reveal">
-                  <h2 className="text-3xl md:text-4xl font-bold text-[#050505] mb-8">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-8">
                     Delta
                   </h2>
                   <div className="space-y-10">
                     <div>
-                      <h3 className="font-bold text-[#050505] mb-5 text-lg">
+                      <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">
                         Behavior Changes
                       </h3>
                       {output.delta.behaviorChanges && output.delta.behaviorChanges.length > 0 ? (
@@ -342,21 +342,21 @@ export default function SimulationPage() {
                           {output.delta.behaviorChanges.map((change, idx) => (
                             <li
                               key={idx}
-                              className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                              className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                             >
                               {change}
                             </li>
                           ))}
                         </ul>
                       ) : (
-                        <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                        <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                           No behavior changes returned. Try adding more detail and run again.
                         </p>
                       )}
                     </div>
 
                     <div>
-                      <h3 className="font-bold text-[#050505] mb-5 text-lg">
+                      <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">
                         Outcome Differences
                       </h3>
                       {output.delta.outcomeDifferences && output.delta.outcomeDifferences.length > 0 ? (
@@ -364,21 +364,21 @@ export default function SimulationPage() {
                           {output.delta.outcomeDifferences.map((diff, idx) => (
                             <li
                               key={idx}
-                              className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                              className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                             >
                               {diff}
                             </li>
                           ))}
                         </ul>
                       ) : (
-                        <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                        <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                           No outcome differences returned. Try adding more detail and run again.
                         </p>
                       )}
                     </div>
 
                     <div>
-                      <h3 className="font-bold text-[#050505] mb-5 text-lg">
+                      <h3 className="text-2xl md:text-3xl font-semibold text-[#050505] mb-5">
                         Identity Impact
                       </h3>
                       {output.delta.identityImpact && output.delta.identityImpact.length > 0 ? (
@@ -386,14 +386,14 @@ export default function SimulationPage() {
                           {output.delta.identityImpact.map((impact, idx) => (
                             <li
                               key={idx}
-                              className="text-[#050505] text-lg leading-relaxed pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
+                              className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] pl-4 border-l-2 border-[rgba(5,5,5,0.10)]"
                             >
                               {impact}
                             </li>
                           ))}
                         </ul>
                       ) : (
-                        <p className="text-[rgba(5,5,5,0.48)] text-lg italic">
+                        <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)]">
                           No identity impact returned. Try adding more detail and run again.
                         </p>
                       )}

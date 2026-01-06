@@ -11,6 +11,7 @@
   --color-glass-fill: rgba(255, 255, 255, 0.70);
   --color-glass-stroke: rgba(255, 255, 255, 0.55);
   --color-glass-edge: rgba(5, 5, 5, 0.08);
+  --accent: #2563EB;
 }
 
 @layer base {
@@ -28,28 +29,22 @@
     color: var(--color-ink);
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply tracking-tight;
-    letter-spacing: -0.04em;
-    color: var(--color-ink);
-    font-weight: 700;
-  }
-
   h1 {
-    @apply mb-6;
+    @apply tracking-tight;
     letter-spacing: -0.05em;
+    color: var(--color-ink);
     font-weight: 700;
   }
 
   h2 {
-    @apply mb-4;
+    @apply tracking-tight;
     letter-spacing: -0.03em;
-    font-weight: 700;
+    color: var(--color-ink);
+    font-weight: 600;
   }
 
   p {
     color: var(--color-ink);
-    line-height: 1.7;
   }
 
   a {
