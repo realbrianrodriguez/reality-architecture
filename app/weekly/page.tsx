@@ -80,7 +80,7 @@ export default function WeeklyPage() {
                 <TextArea
                   value={weekSummary}
                   onChange={(e) => setWeekSummary(e.target.value)}
-                  placeholder="In 3–6 sentences: What kept coming up this week? What did you avoid? What did you actually do? What felt heavy or clear?"
+                  placeholder="Write a short reflection about your week. What kept coming up? What did you avoid? What did you actually do? What felt heavy or clear? Write at least 60 characters to enable the button."
                 />
               </div>
               <div style={{ opacity: loading ? 0.6 : 1, transition: 'opacity 200ms ease' }}>
@@ -143,14 +143,14 @@ export default function WeeklyPage() {
         </GlassPanel>
 
         {validationMessage && (
-          <div className="glass-panel p-6 border-[rgba(5,5,5,0.20)]">
-            <p className="text-[rgba(5,5,5,0.64)] text-lg leading-relaxed">{validationMessage}</p>
+          <div className="glass-panel p-6">
+            <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{validationMessage}</p>
           </div>
         )}
 
         {error && (
-          <div className="glass-panel p-6 border-red-300/50">
-            <p className="text-red-600 font-semibold">{error}</p>
+          <div className="glass-panel p-6">
+            <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{error}</p>
           </div>
         )}
       </div>

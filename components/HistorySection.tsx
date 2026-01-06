@@ -91,7 +91,14 @@ export default function HistorySection({
           <div key={run.id}>
             <div
               onClick={() => handleToggleExpand(run.id)}
-              className="cursor-pointer p-4 rounded-glass-sm border border-[rgba(5,5,5,0.10)] hover:border-[rgba(5,5,5,0.20)] transition-colors"
+              className="cursor-pointer p-4 rounded-glass-sm border border-[rgba(5,5,5,0.10)] hover:border-[rgba(5,5,5,0.20)] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus-within:ring-2 focus-within:ring-[var(--accent)] focus-within:ring-offset-2"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  handleToggleExpand(run.id);
+                }
+              }}
             >
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
@@ -104,7 +111,7 @@ export default function HistorySection({
                 </div>
                 <button
                   onClick={(e) => handleDelete(run.id, e)}
-                  className="flex-shrink-0 text-sm font-normal text-[rgba(5,5,5,0.48)] hover:text-[#050505] transition-colors p-2"
+                  className="flex-shrink-0 text-sm font-normal text-[rgba(5,5,5,0.48)] hover:text-[#050505] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-sm"
                   aria-label="Delete"
                 >
                   <svg
@@ -144,13 +151,13 @@ export default function HistorySection({
               <div className="flex gap-3">
                 <button
                   onClick={handleClearAll}
-                  className="px-4 py-2 rounded-glass-sm border border-[rgba(5,5,5,0.20)] text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] hover:bg-[rgba(5,5,5,0.05)] transition-colors"
+                  className="px-4 py-2 rounded-glass-sm border border-[rgba(5,5,5,0.20)] text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)] hover:bg-[rgba(5,5,5,0.05)] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
                 >
                   Confirm Clear
                 </button>
                 <button
                   onClick={() => setShowClearConfirm(false)}
-                  className="px-4 py-2 rounded-glass-sm border border-[rgba(5,5,5,0.20)] text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)] hover:bg-[rgba(5,5,5,0.05)] transition-colors"
+                  className="px-4 py-2 rounded-glass-sm border border-[rgba(5,5,5,0.20)] text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.48)] hover:bg-[rgba(5,5,5,0.05)] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2"
                 >
                   Cancel
                 </button>
@@ -159,7 +166,7 @@ export default function HistorySection({
           ) : (
             <button
               onClick={handleClearAll}
-              className="text-sm font-normal text-[rgba(5,5,5,0.48)] hover:text-[#050505] transition-colors"
+              className="text-sm font-normal text-[rgba(5,5,5,0.48)] hover:text-[#050505] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-sm"
             >
               Clear all
             </button>

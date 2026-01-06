@@ -103,13 +103,13 @@ export default function SimulationPage() {
           </GlassPanel>
 
           {validationMessage && (
-            <div className="glass-panel p-6 border-[rgba(5,5,5,0.20)]">
+            <div className="glass-panel p-6">
               <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{validationMessage}</p>
             </div>
           )}
 
           {error && (
-            <div className="glass-panel p-6 border-red-300/50">
+            <div className="glass-panel p-6">
               <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{error}</p>
             </div>
           )}

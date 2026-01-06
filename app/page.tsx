@@ -18,33 +18,9 @@ export default function Home() {
         <div className="grid grid-cols-1 gap-8 md:gap-12 lg:gap-16">
           
           {/* Glass panel container */}
-          <div className="relative">
-            {/* Frosted glass panel */}
-            <div 
-              className="relative p-12 md:p-16 lg:p-20 rounded-[32px]"
-              style={{
-                background: 'rgba(255, 255, 255, 0.65)',
-                backdropFilter: 'blur(24px) saturate(120%)',
-                WebkitBackdropFilter: 'blur(24px) saturate(120%)',
-                border: '1px solid rgba(5, 5, 5, 0.06)',
-                boxShadow: `
-                  0 1px 0 0 rgba(255, 255, 255, 0.8) inset,
-                  0 32px 96px rgba(5, 5, 5, 0.04),
-                  0 8px 24px rgba(5, 5, 5, 0.02)
-                `,
-              }}
-            >
-              {/* Specular highlight */}
-              <div 
-                className="absolute inset-0 rounded-[32px] pointer-events-none"
-                style={{
-                  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 50%)',
-                  opacity: 0.5,
-                }}
-              />
+          <div className="glass-panel p-12 md:p-16 lg:p-20">
 
-              {/* Content */}
-              <div className="relative z-10 space-y-10 md:space-y-12 lg:space-y-16">
+            <div className="relative z-10 space-y-10 md:space-y-12 lg:space-y-16">
                 
                 {/* Hero section */}
                 <div className="space-y-8">
@@ -75,9 +51,9 @@ export default function Home() {
                 {/* CTA section */}
                 <div className="flex flex-col items-start gap-8 md:gap-10 pt-4 md:pt-6">
                   {/* Primary CTA - ONLY place with accent color */}
-                  <Link href="/daily">
+                  <Link href="/daily" className="focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-[20px]">
                     <button
-                      className="px-10 md:px-12 py-5 md:py-6 rounded-[20px] font-semibold text-lg transition-all duration-300 relative overflow-hidden group"
+                      className="px-10 md:px-12 py-5 md:py-6 rounded-[20px] font-semibold text-lg transition-all duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] relative overflow-hidden group w-full"
                       style={{
                         background: '#2563EB',
                         color: '#FFFFFF',
@@ -85,24 +61,17 @@ export default function Home() {
                       }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.boxShadow = '0 8px 24px rgba(37, 99, 235, 0.35), 0 4px 12px rgba(37, 99, 235, 0.2)';
-                        e.currentTarget.style.transform = 'translateY(-2px)';
+                        e.currentTarget.style.transform = 'translateY(-1px)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.boxShadow = '0 4px 16px rgba(37, 99, 235, 0.25), 0 2px 8px rgba(37, 99, 235, 0.15)';
                         e.currentTarget.style.transform = 'translateY(0)';
                       }}
-                      onFocus={(e) => {
-                        e.currentTarget.style.outline = '2px solid #2563EB';
-                        e.currentTarget.style.outlineOffset = '4px';
-                      }}
-                      onBlur={(e) => {
-                        e.currentTarget.style.outline = 'none';
-                      }}
                     >
                       <span className="relative z-10">Begin today</span>
                       {/* Subtle shine effect */}
                       <div 
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)]"
                         style={{
                           background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%)',
                         }}
@@ -114,28 +83,28 @@ export default function Home() {
                   <div className="flex flex-wrap items-center gap-3 md:gap-4 text-sm font-normal text-[rgba(5,5,5,0.48)]">
                     <Link 
                       href="/weekly" 
-                      className="hover:text-[#050505] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#050505] focus:ring-offset-2 rounded-sm px-1"
+                      className="hover:text-[#050505] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-sm px-1"
                     >
                       Week
                     </Link>
                     <span className="text-[rgba(5,5,5,0.32)]">·</span>
                     <Link 
                       href="/reality-scan" 
-                      className="hover:text-[#050505] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#050505] focus:ring-offset-2 rounded-sm px-1"
+                      className="hover:text-[#050505] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-sm px-1"
                     >
                       Mirror
                     </Link>
                     <span className="text-[rgba(5,5,5,0.32)]">·</span>
                     <Link 
                       href="/identity-designer" 
-                      className="hover:text-[#050505] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#050505] focus:ring-offset-2 rounded-sm px-1"
+                      className="hover:text-[#050505] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-sm px-1"
                     >
                       Reframe
                     </Link>
                     <span className="text-[rgba(5,5,5,0.32)]">·</span>
                     <Link 
                       href="/simulation" 
-                      className="hover:text-[#050505] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#050505] focus:ring-offset-2 rounded-sm px-1"
+                      className="hover:text-[#050505] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-sm px-1"
                     >
                       Paths
                     </Link>
@@ -144,14 +113,13 @@ export default function Home() {
                       onClick={() => {
                         window.dispatchEvent(new CustomEvent('openOnboarding'));
                       }}
-                      className="hover:text-[#050505] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#050505] focus:ring-offset-2 rounded-sm px-1 text-left"
+                      className="hover:text-[#050505] transition-colors duration-[150ms] ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent)] focus-visible:ring-offset-2 rounded-sm px-1 text-left"
                     >
                       Guide
                     </button>
                   </div>
                 </div>
 
-              </div>
             </div>
           </div>
 

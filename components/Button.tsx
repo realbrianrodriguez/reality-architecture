@@ -33,11 +33,12 @@ export default function Button({
     relative
     overflow-hidden
     transition-all
-    duration-150
+    duration-[150ms]
     ease-[cubic-bezier(0.2,0.8,0.2,1)]
     focus:outline-none
-    focus:ring-2
-    focus:ring-offset-2
+    focus-visible:ring-2
+    focus-visible:ring-[var(--accent)]
+    focus-visible:ring-offset-2
   `;
 
   // Variant-specific classes
@@ -48,11 +49,13 @@ export default function Button({
       hover:shadow-[0_4px_12px_rgba(37,99,235,0.3),0_2px_6px_rgba(37,99,235,0.2)]
       active:translate-y-[1px]
       active:shadow-[0_1px_4px_rgba(37,99,235,0.2),0_1px_2px_rgba(37,99,235,0.15)]
-      focus:ring-[#2563EB]
-      disabled:opacity-50
+      focus-visible:ring-[var(--accent)]
+      disabled:opacity-60
       disabled:cursor-not-allowed
       disabled:hover:shadow-[0_2px_8px_rgba(37,99,235,0.2),0_1px_3px_rgba(37,99,235,0.15)]
+      disabled:hover:bg-[var(--accent)]
       disabled:active:translate-y-0
+      disabled:active:shadow-[0_2px_8px_rgba(37,99,235,0.2),0_1px_3px_rgba(37,99,235,0.15)]
     `,
     secondary: `
       bg-[var(--color-glass-fill)]
@@ -66,7 +69,7 @@ export default function Button({
       hover:shadow-[0_1px_0_0_var(--color-glass-edge)_inset,0_6px_16px_rgba(5,5,5,0.06)]
       active:translate-y-[1px]
       active:shadow-[0_1px_0_0_var(--color-glass-edge)_inset,0_2px_6px_rgba(5,5,5,0.04)]
-      focus:ring-[var(--color-ink)]
+      focus-visible:ring-[var(--accent)]
       disabled:opacity-50
       disabled:cursor-not-allowed
       disabled:hover:bg-[var(--color-glass-fill)]
@@ -80,7 +83,7 @@ export default function Button({
       hover:bg-[rgba(5,5,5,0.04)]
       hover:text-[rgba(5,5,5,0.80)]
       active:bg-[rgba(5,5,5,0.06)]
-      focus:ring-[var(--color-ink)]
+      focus-visible:ring-[var(--accent)]
       disabled:opacity-40
       disabled:cursor-not-allowed
       disabled:hover:bg-transparent
@@ -98,7 +101,15 @@ export default function Button({
 
   // Inline style for primary variant background (accent color)
   const getBackgroundColor = () => {
-    if (variant !== 'primary' || disabled) return {};
+    if (variant !== 'primary') return {};
+    
+    // Always show accent background, even when disabled
+    if (disabled) {
+      return {
+        backgroundColor: 'var(--accent)',
+      };
+    }
+    
     return {
       backgroundColor: isHovered ? '#1d4ed8' : 'var(--accent)',
     };

@@ -177,7 +177,7 @@ export default function DailyPage() {
           </GlassPanel>
 
           {error && (
-            <div className="glass-panel p-6 border-red-300/50">
+            <div className="glass-panel p-6">
               <p className="text-lg leading-relaxed font-normal text-[rgba(5,5,5,0.72)]">{error}</p>
             </div>
           )}
